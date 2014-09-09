@@ -1,19 +1,65 @@
-<p id="notice"><%= notice %></p>
+<h1>品牌列表</h1>
+<div class="span12">
+  <table>
+  	  <tr>
+	    <th><h3>品牌 ID:</h3></th>   <td><h3><%= @brand.Brand_ID %></h3></td>
+	  </tr>
+	  <tr>
+	    <th><h3>品牌名(英):</h3></th>   <td><h3><%= @brand.Brand_name %></h3></td>
+	  </tr>
+	  <tr>
+	    <th><h3>品牌名(中):</h3></th>    <td><h3><%= @brand.Brand_cname %></h3></td>
+	  </tr>
 
-<p>
-  <strong>品牌ID:</strong>
-  <%= @brand.Brand_ID %>
-</p>
+  
+  </table>
+		&nbsp;
+		&nbsp;
 
-<p>
-  <strong>品牌名(英):</strong>
-  <%= @brand.Brand_name %>
-</p>
+	<div class="group pull-right">
 
-<p>
-  <strong>品牌名(中):</strong>
-  <%= @brand.Brand_cname %>
-</p>
+		<%= link_to '新增產品', new_brand_product_path(@brand) %>
+		&nbsp;
+		&nbsp;
+		&nbsp;
+		<%= link_to '返回品牌', brands_path %>
+	</div>
 
-<%= link_to 'Edit', edit_brand_path(@brand) %> |
-<%= link_to 'Back', brands_path %>
+<h2>產品列表</h2>
+	
+	<table class="table">
+
+		<tbody>
+			  <tr>
+			    <th>品牌ID</th>
+
+    			<th>產品ID</th>
+
+    			<th>產品名(英文)</th>
+
+    			<th>產品名(中文)</th>
+
+    			<th colspan="4"></th>
+  			  </tr>
+
+
+			<% @products.each do |product| %>
+			<tr>
+				<td> <%= product.brand_id %> </td>
+				<td> <%= product.Product_ID %> </td>
+				<td> <%= product.Product_name %> </td>
+				<td> <%= product.Product_cname %> </td>
+
+				<td> <%= link_to("查詢", brand_product_path(product.brand, product))%>
+				<%= link_to("編輯", edit_brand_product_path(product.brand, product))%>
+ 				<%= link_to("刪除", brand_product_path(product.brand, product), :method => :delete, :confirm => "Are you sure?" ) %> </td>
+			</tr>
+			<% end %>
+
+
+		</tbody>
+	</table>
+</div>
+
+
+

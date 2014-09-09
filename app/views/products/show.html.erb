@@ -1,0 +1,44 @@
+<h1>產品細節</h1>
+<div class="span12">
+  <table>
+  	  <tr>
+	    <th><h3>品牌 ID:</h3></th>   <td><h3><%= @brand.Brand_ID %></h3></td>
+	  </tr>
+	  <tr>
+	    <th><h3>品牌名(英):</h3></th>   <td><h3><%= @brand.Brand_name %></h3></td>
+	  </tr>
+	  <tr>
+	    <th><h3>品牌名(中):</h3></th>    <td><h3><%= @brand.Brand_cname %></h3></td>
+	  </tr>
+
+  	  <tr>
+	    <th><h3>產品 ID:</h3></th>   <td><h3><%= @product.Product_ID %></h3></td>
+	  </tr>
+	  <tr>
+	    <th><h3>產品名(英):</h3></th>   <td><h3><%= @product.Product_name %></h3></td>
+	  </tr>
+	  <tr>
+	    <th><h3>產品名(中):</h3></th>    <td><h3><%= @product.Product_cname %></h3></td>
+	  </tr>
+  
+  </table>
+		&nbsp;
+		&nbsp;
+
+	<div class="group pull-right">
+
+		<%= link_to '新增產品', new_brand_product_path(@brand) %>
+		&nbsp;
+		&nbsp;
+		&nbsp;
+		<%= link_to("編輯產品", edit_brand_product_path)%>
+		&nbsp;
+		&nbsp;
+		&nbsp;
+		<%= link_to '返回', brand_path(@brand) %>
+	</div>
+</div>
+
+
+
+

@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>品牌ID:</strong>
+  <%= @brand.Brand_ID %>
+</p>
+
+<p>
+  <strong>品牌名(英):</strong>
+  <%= @brand.Brand_name %>
+</p>
+
+<p>
+  <strong>品牌名(中):</strong>
+  <%= @brand.Brand_cname %>
+</p>
+
+<%= link_to 'Edit', edit_brand_path(@brand) %> |
+<%= link_to 'Back', brands_path %>

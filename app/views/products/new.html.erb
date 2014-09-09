@@ -1,0 +1,38 @@
+<h1>新增產品</h1>
+
+<%= form_for @product, :url => { :controller => 'products', :action => 'create' } do |f| %>
+  <table>
+  <tr>
+    <th>品牌ID</th>
+    <th>品牌名(英文)</th>
+    <th>品牌名(中文)</th>
+    <th colspan="3"></th>
+    <th></th>
+    <th></th>
+  </tr>
+  <tr>
+    <td><%= @brand.Brand_ID %></td>
+    <td><%= @brand.Brand_name %></td>
+    <td><%= @brand.Brand_cname %></td>
+  </tr>
+  </table>
+&nbsp;
+&nbsp;
+&nbsp;
+    <div class="field">
+      <%= f.label :'產品_ID:' %><br>
+      <%= f.number_field :Product_ID %>
+    </div>
+	<div class="field">
+	  <%= f.label :'產品名(英):' %><br>
+	  <%= f.text_field :Product_name %>
+	</div>
+	<div class="field">
+	  <%= f.label :'產品名(中):' %><br>
+	  <%= f.text_field :Product_cname %>
+	</div>
+
+    <%= f.submit "新增產品" %>
+<% end %>
+
+<%= link_to '返回產品', brand_path(@brand) %>

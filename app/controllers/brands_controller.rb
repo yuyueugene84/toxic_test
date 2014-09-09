@@ -5,6 +5,9 @@ class BrandsController < ApplicationController
 
 	def show
 		@brand = Brand.find(params[:id])
+		@products = @brand.products
+		#@product = @brand.products
+		#@products= @brand.products.find(params[:id])
 	end
 
 	def new
