@@ -1,0 +1,47 @@
+<h1>編輯產品</h1>
+
+<%= form_for @ingredient, :url => { :controller => 'ingredients', :action => 'update' } do |f| %>
+  <table>
+  <tr>
+    <th>產品ID</th>
+    <th>產品名(英文)</th>
+    <th>產品名(中文)</th>
+    <th colspan="3"></th>
+    <th></th>
+    <th></th>
+  </tr>
+  <tr>
+    <td><%= @product.Product_ID %></td>
+    <td><%= @product.Product_name %></td>
+    <td><%= @product.Product_cname %></td>
+  </tr>
+  </table>
+
+&nbsp;
+&nbsp;
+&nbsp;
+  <div class="field">
+    <%= f.label :'成分_ID:' %><br>
+    <%= f.number_field :Ingredient_ID %>
+    </div>
+	<div class="field">
+	  <%= f.label :'成分名(英):' %><br>
+	  <%= f.text_field :Ingredient_name %>
+	</div>
+	<div class="field">
+	  <%= f.label :'成分名(中):' %><br>
+	  <%= f.text_field :Ingredient_cname %>
+	</div>
+  <div class="field">
+    <%= f.label :'政府編號:' %><br>
+    <%= f.text_field :Gov_Number %>
+  </div>
+    <div class="field">
+    <%= f.label :'CAS編號:' %><br>
+    <%= f.text_field :CAS_Number %>
+  </div>
+</br>
+    <%= f.submit "編輯成分" %>
+<% end %>
+</br>
+<%= link_to("返回產品", brand_product_path(@brand, @product))%>

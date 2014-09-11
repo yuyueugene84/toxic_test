@@ -1,0 +1,39 @@
+<h1>品牌列表</h1>
+
+  <table class="table">
+
+    <tbody>
+        <tr>
+          <th>品牌ID</th>
+
+          <th>產品ID</th>
+
+          <th>產品名(英文)</th>
+
+          <th>產品名(中文)</th>
+
+          <th colspan="4"></th>
+          </tr>
+
+
+      <% @products.each do |product| %>
+      <tr>
+        <td> <%= product.brand_id %> </td>
+        <td> <%= product.Product_ID %> </td>
+        <td> <%= product.Product_name %> </td>
+        <td> <%= product.Product_cname %> </td>
+
+        <td> <%= link_to("查詢", brand_product_path(product.brand, product))%>
+        <%= link_to("編輯", edit_brand_product_path(product.brand, product))%>
+        <%= link_to("刪除", brand_product_path(product.brand, product), :method => :delete, :confirm => "Are you sure?" ) %> </td>
+      </tr>
+      <% end %>
+
+
+    </tbody>
+  </table>
+
+<br />
+
+<%= link_to '新增品牌', new_brand_path %>
+<%=link_to 'hola!', { :controller=> 'brands', :action => 'list' } %> 

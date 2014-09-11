@@ -8,7 +8,8 @@ class ProductsController < ApplicationController
 
 	def show
 		@brand = Brand.find(params[:brand_id])
-		@product= @brand.products.find(params[:id])
+		@product = @brand.products.find(params[:id])
+		@ingredients = @product.ingredients
 		#@products = @brand.products
 		#@product = @brand.products
 		#@products= @brand.products.find(params[:id])
@@ -36,7 +37,7 @@ class ProductsController < ApplicationController
 		@product= @brand.products.find(params[:id])
 
 		if @product.update(product_params)
-	       redirect_to brand_path(@brand)
+	       redirect_to brand_product_path(@brand, @product)
 		else
 		   render :edit
 		end

@@ -35,10 +35,52 @@
 		&nbsp;
 		&nbsp;
 		&nbsp;
+		<%= link_to '新增成分', new_brand_product_ingredient_path(@brand, @product, @ingredient) %>
+		&nbsp;
+		&nbsp;
+		&nbsp;
 		<%= link_to '返回', brand_path(@brand) %>
 	</div>
 </div>
 
+<h2>成分列表</h2>
+	
+	<table class="table">
+
+		<tbody>
+			  <tr>
+			    <th>成分ID</th>
+
+    			<th>成分名(英)</th>
+
+    			<th>成分名(中)</th>
+
+    			<th>CAS編號</th>
+
+    			<th colspan="4"></th>
+  			  </tr>
+
+
+			<% @ingredients.each do |ingredient| %>
+			<tr>
+				<td> <%= ingredient.Ingredient_ID %> </td>
+				<td> <%= ingredient.Ingredient_name %> </td>
+				<td> <%= ingredient.Ingredient_cname %> </td>
+				<td> <%= ingredient.CAS_Number %> </td>
+
+				<td> 
+				<%= link_to("查詢", brand_product_ingredient_path(@brand.id, ingredient.product_id, ingredient))%>
+				<%= link_to("編輯", edit_brand_product_ingredient_path(@brand.id, ingredient.product_id, ingredient))%>
+ 				<%= link_to("刪除", brand_product_path(@brand.id, ingredient.product_id, ingredient), :method => :delete, :confirm => "Are you sure?" ) %> </td>
+
+
+			</tr>
+			<% end %>
+
+
+		</tbody>
+	</table>
+</div>
 
 
 

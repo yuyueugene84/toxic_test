@@ -1,0 +1,47 @@
+<h1>成份細節</h1>
+<div class="span12">
+  <table>
+  	  <tr>
+	    <th><h3>產品ID:</h3></th>   <td><h3><%= @product.Product_ID %></h3></td>
+	  </tr>
+	  <tr>
+	    <th><h3>產品名(英):</h3></th>   <td><h3><%= @product.Product_name %></h3></td>
+	  </tr>
+	  <tr>
+	    <th><h3>產品名(中):</h3></th>    <td><h3><%= @product.Product_cname %></h3></td>
+	  </tr>
+	  <tr>
+	    <th><h3>成份ID:</h3></th>    <td><h3><%= @ingredient.Ingredient_ID %></h3></td>
+	  </tr>
+	  <tr>
+	    <th><h3>成份名(英):</h3></th>    <td><h3><%= @ingredient.Ingredient_name %></h3></td>
+	  </tr>
+	  <tr>
+	    <th><h3>成份名(中):</h3></th>    <td><h3><%= @ingredient.Ingredient_cname %></h3></td>
+	  </tr>
+	  <tr>
+	    <th><h3>CAS編號:</h3></th>    <td><h3><%= @ingredient.CAS_Number %></h3></td>
+	  </tr>
+
+  
+  </table>
+		&nbsp;
+		&nbsp;
+
+	<div class="group pull-right">
+
+		<%= link_to '新增成份', new_brand_product_ingredient_path(@brand, @product, @ingredient) %>
+		&nbsp;
+		&nbsp;
+		&nbsp;
+		<%= link_to '編輯成份', edit_brand_product_ingredient_path(@brand, @product, @ingredient)%>
+		&nbsp;
+		&nbsp;
+		&nbsp;
+		<%= link_to '返回', brand_product_path(@brand, @product) %>
+	</div>
+</div>
+
+
+
+

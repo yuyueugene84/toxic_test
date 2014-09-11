@@ -1,0 +1,25 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  Ingredient_ID: MyString
+  integer: MyString
+  Ingredient_name: MyString
+  string: MyString
+  product_id: 1
+  Ingredient_cname: MyString
+  Gov_Number: MyString
+  string: MyString
+  CAS_Number: MyString
+  string: MyString
+
+two:
+  Ingredient_ID: MyString
+  integer: MyString
+  Ingredient_name: MyString
+  string: MyString
+  product_id: 1
+  Ingredient_cname: MyString
+  Gov_Number: MyString
+  string: MyString
+  CAS_Number: MyString
+  string: MyString

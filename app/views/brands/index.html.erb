@@ -8,11 +8,13 @@
 
     <th>品牌名(中文)</th>
 
+    <th><%= link_to '新增品牌', new_brand_path %></th>
+  </tr>
     <th colspan="4"></th>
     <th></th>
     <th></th>
   </tr>
-
+  <br/>
 <% @brands.each do |brand| %>
   <tr>
     <td><%= brand.Brand_ID %></td>
@@ -27,4 +29,44 @@
 
 <br />
 
-<%= link_to '新增品牌', new_brand_path %>
+
+
+
+
+<br/>
+<br/>
+  <select name="search_options">
+  <option value="0">...</option>
+  <option value="1">產品名</option>
+  <option value="2">品牌名</option>
+</select> 
+
+<table>
+  <tr>
+
+
+    <th>產品ID</th>
+
+    <th>品牌名(英)</th>
+    
+    <th>品牌名(中)</th>
+
+    <th>產品名(英)</th>
+
+    <th>產品名(中)</th>
+
+  </tr>
+
+
+<% @products.each do |product| %>
+  <tr>
+    <td><%= product[0] %></td>
+    <td><%= product[1] %></td>
+    <td><%= product[2] %></td>
+    <td><%= product[3] %></td>
+    <td><%= product[4] %></td>
+
+  </tr>
+<% end %>
+
+  </table>
