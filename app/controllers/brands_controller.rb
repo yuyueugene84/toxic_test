@@ -4,14 +4,15 @@ class BrandsController < ApplicationController
 		sql = "Select * from products order by brand_id"
 		sql2 = "Select * from brands"
 		sql3 = "SELECT B.Product_ID, A.Brand_name, A.Brand_cname, B.Product_name, B.Product_cname FROM brands A, products B WHERE A.Brand_ID = B.brand_id ORDER BY A.Brand_ID"
-		# @products = ActiveRecord::Base.connection.execute(sql3)
-		# @brand1 = ActiveRecord::Base.connection.execute(sql2)
+		@products = ActiveRecord::Base.connection.execute(sql3)
+		@brand1 = ActiveRecord::Base.connection.execute(sql2)
 
 
 
-		@sql = Product.all.order(:brand_id)
-		@brand1 = Brand.all
-		@products = Product.includes(:brand).all
+		#@sql = Product.all.order(:brand_id)
+		#@brand1 = Brand.all
+		#@products = Product.includes(:brand).all
+		
 		# @sql3 = Product.joins(:brand).to_sql
 		# @options = params[:search_options]
 
@@ -23,7 +24,7 @@ class BrandsController < ApplicationController
 		# 	@opt_brand = ActiveRecord::Base.connection.execute(sql5)
 		# end
 
- @brand3 = ActiveRecord::Base.connection.execute("insert into ")
+ #@brand3 = ActiveRecord::Base.connection.execute("insert into ")
 
 
 	end
