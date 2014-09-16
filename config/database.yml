@@ -48,7 +48,9 @@ test:
 #     url: <%= ENV['DATABASE_URL'] %>
 #
 production:
-  <<: *default
+  adapter: postgresql 
+  encoding: utf8
+  database: toxic_test
   # database: toxic_test_production
   # username: toxic_test
   # password: <%= ENV['TOXIC_TEST_DATABASE_PASSWORD'] %>
