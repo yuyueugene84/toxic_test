@@ -29,44 +29,7 @@
 
 <br />
 
-<table>
-  <tr>
 
-
-    <th>產品ID</th>
-
-    <th>品牌名(英)</th>
-   
-    <th>品牌名(中)</th>
-
-    <th>產品名(英)</th>
-
-    <th>產品名(中)</th>
-
-  </tr>
-
-<% @products.each do |product| %>
-  <tr>
-    <td><%= product.id %></td>
-    <td><%= product.brand.Brand_name %></td>
-    <td><%= product.brand.Brand_cname %></td>
-    <td><%= product.Product_name %></td>
-    <td><%= product.Product_cname %></td>
-  </tr>
-<% end %>
-
-<%# @products.each do |product| %>
-  <tr>
-    <td><%#= product[0] %></td>
-    <td><%#= product[1] %></td>
-    <td><%#= product[2] %></td>
-    <td><%#= product[3] %></td>
-    <td><%#= product[4] %></td>
-
-  </tr>
-<%# end %>
-
-  </table>
 
 
 
@@ -78,3 +41,32 @@
   <option value="2">品牌名</option>
 </select> 
 
+<table>
+  <tr>
+
+
+    <th>產品ID</th>
+
+    <th>品牌名(英)</th>
+    
+    <th>品牌名(中)</th>
+
+    <th>產品名(英)</th>
+
+    <th>產品名(中)</th>
+
+  </tr>
+
+
+<% @products.each do |product| %>
+  <tr>
+    <td><%= product[0] %></td>
+    <td><%= product[1] %></td>
+    <td><%= product[2] %></td>
+    <td><%= product[3] %></td>
+    <td><%= product[4] %></td>
+
+  </tr>
+<% end %>
+
+  </table>

@@ -3,9 +3,9 @@ class BrandsController < ApplicationController
 		@brands = Brand.all
 		sql = "Select * from products order by brand_id"
 		sql2 = "Select * from brands"
-		sql3 = "SELECT B.Product_ID, A.Brand_name, A.Brand_cname, B.Product_name, B.Product_cname FROM brands A, products B WHERE A.Brand_ID = B.brand_id ORDER BY A.Brand_ID"
-		@products = ActiveRecord::Base.connection.execute(sql3)
-		@brand1 = ActiveRecord::Base.connection.execute(sql2)
+		#sql3 = "SELECT B.Product_ID, A.Brand_name, A.Brand_cname, B.Product_name, B.Product_cname FROM brands A, products B WHERE A.Brand_ID = B.brand_id ORDER BY A.Brand_ID"
+		#@products = ActiveRecord::Base.connection.execute(sql3)
+		#@brand1 = ActiveRecord::Base.connection.execute(sql2)
 
 
 
