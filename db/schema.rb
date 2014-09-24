@@ -22,11 +22,9 @@ ActiveRecord::Schema.define(version: 20140910091053) do
   end
 
   create_table "ingredients", force: true do |t|
-    t.string   "Ingredient_ID"
-    t.string   "integer"
-    t.string   "Ingredient_name"
-    t.string   "string"
     t.integer  "product_id"
+    t.string   "Ingredient_ID"
+    t.string   "Ingredient_name"
     t.string   "Ingredient_cname"
     t.string   "Gov_Number"
     t.string   "CAS_Number"
