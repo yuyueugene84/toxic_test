@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140910091053) do
+ActiveRecord::Schema.define(version: 20140930080829) do
 
   create_table "brands", force: true do |t|
     t.integer  "Brand_ID"
@@ -34,11 +34,11 @@ ActiveRecord::Schema.define(version: 20140910091053) do
 
   create_table "products", force: true do |t|
     t.integer  "Product_ID"
-    t.integer  "brand_id"
     t.string   "Product_name"
     t.string   "Product_cname"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "brand_id"
   end
 
 end
